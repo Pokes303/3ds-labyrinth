@@ -1,0 +1,3 @@
+Level templates for 3ds-labyrinth
+
+You can convert the templates into code with /_Level-Converter.exe and generate new levels on https://hereandabove.com/maze/mazeorig.form.html (open it with) /_herandabove_mazegenerator_.bat
