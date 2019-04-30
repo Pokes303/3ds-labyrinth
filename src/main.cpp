@@ -196,10 +196,10 @@ void game(char _level[29][49]) {
 		printf("Press START return to menu");
 		printf("\x1b[29;2HAttempts: %d", attempts);
 
-		refresh();
-
 		while (aptMainLoop())
 		{
+			refresh();
+
 			hidScanInput();
 
 			u32 kDown = hidKeysDown();
@@ -208,25 +208,25 @@ void game(char _level[29][49]) {
 				py -= 1;
 				break;
 			}
-			if (kDown & KEY_DRIGHT) {
+			else if (kDown & KEY_DRIGHT) {
 				px += 1;
 				break;
 			}
-			if (kDown & KEY_DDOWN) {
+			else if (kDown & KEY_DDOWN) {
 				py += 1;
 				break;
 			}
-			if (kDown & KEY_DLEFT) {
+			else if (kDown & KEY_DLEFT) {
 				px -= 1;
 				break;
 			}
-			if (kDown & KEY_SELECT) {
+			else if (kDown & KEY_SELECT) {
 				px = lsx;
 				py = lsy;
 				attempts++;
 				break;
 			}
-			if (kDown & KEY_START)
+			else if (kDown & KEY_START)
 				return;
 		}
 	}
@@ -313,8 +313,9 @@ int main() {
 
 	while (aptMainLoop())
 	{
+
 		hidScanInput();
-		u32 kDown = hidKeysDown();
+		u32 kDown = hidKeysUp();
 
 		if (kDown & KEY_A) {
 			start(levelType::easyL);
